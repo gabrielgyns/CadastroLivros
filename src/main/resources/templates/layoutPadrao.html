@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <style type="text/css">
+		html {
+		    height: 100%;
+		    min-height: 100%;
+		}
+		
+		body {
+		    display: flex;
+		    flex-direction: column;
+		    min-height: 100%;
+		}
+		
+		footer {
+		    margin-top: auto;
+		}
+    </style>
+    
+</head>
+<body>
+
+	<header layout:insert="cabecalho">
+		Cabeçalho
+	</header>
+
+	<br />
+	<div class="container">
+	<section layout:fragment="conteudo">
+		Conteudo
+	</section>
+	</div>
+	<br />
+
+	<footer class="page-footer">
+	
+		<div class="container">
+			<p>ReadingControl © 2019 Copyright</p>            
+		</div>
+	
+	</footer>
+
+	
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+    <script>
+	    $(document).ready(function(){
+	        $('select').formSelect();
+	        $('.tooltipped').tooltip();
+	        $(".dropdown-trigger").dropdown();
+	      });
+  </script>
+</body>
+</html>

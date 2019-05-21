@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+ 		xmlns:th="http://www.thymeleaf.org"
+ 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+ 
+<!-- Estruturando o dropdown para cadastros -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a th:href="@{/cadastroLivro}">Livros</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+
+<!-- Estruturando o dropdown para listas -->
+<ul id="dropdown2" class="dropdown-content">
+  <li><a th:href="@{/listaLivros}">Livros</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">ReadingControl</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<li>
+      		<a th:href="@{/}">Inicio
+      			<i class="material-icons left">home</i>
+      		</a></li>
+        <li>
+        	<a class="dropdown-trigger" href="#!" data-target="dropdown1">
+        		<i class="material-icons left">save</i>
+        		Cadastros<i class="material-icons right">arrow_drop_down</i>
+        	</a>
+        </li>
+        <li>
+        	<a class="dropdown-trigger" href="#!" data-target="dropdown2">
+        		<i class="material-icons left">reorder</i>
+        		Listas<i class="material-icons right">arrow_drop_down</i>
+        	</a>
+        </li>
+      </ul>
+   </div>
+</nav>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layoutPadrao">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro Livro</title>
+</head>
+<section layout:fragment="conteudo">
+	<h4>Lista de Livros</h4>
+	<div >
+	<!-- 
+			<a class="waves-effect waves-light btn" href="/listaLivros">
+				Listar Livros</a> <br /> <br />
+ -->
+			<table class="striped">
+
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Titulo</th>
+						<th>ISBN</th>
+						<th>Descricao</th>
+						<th>Paginas</th>
+						<th>Autor</th>
+						<th>Editora</th>
+						<th>Gênero</th>
+						<th>Status do livro</th>
+						<th>Acao</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="livro : ${livros}">
+						<td th:text="${livro.id}"></td>
+						<td th:text="${livro.titulo}"></td>
+						<td th:text="${livro.isbn}"></td>
+						<td th:text="${livro.descricao}"></td>
+						<td th:text="${livro.paginas}"></td>
+						<td th:text="${livro.autor}"></td>
+						<td th:text="${livro.editora}"></td>
+						<td th:text="${livro.genero}"></td>
+						<td th:text="${livro.StatusLivro.descricao}"></td>
+						<td><a class="waves-effect waves-light btn tooltipped"
+							data-position="right" data-tooltip="Editar"
+							th:href="@{/editarLivro/{id}(id=${livro.id})}"> <i
+								class="material-icons center">edit</i>
+						</a> <a class="waves-effect waves-light btn tooltipped"
+							data-position="right" data-tooltip="Excluir"
+							th:href="@{/excluirLivro/{id}(id=${livro.id})}"
+							onclick="return confirm('Confirma a exclusão ?')"> <i
+								class="material-icons center">delete</i>
+						</a></td>
+					</tr>
+					<tr>
+						<td colspan="5" th:if="${#lists.isEmpty(livros)}">Nenhum
+							livro cadastrado!</td>
+					</tr>
+				</tbody>
+
+			</table>
+
+	</div> <!-- row -->
+</section>
+</html>

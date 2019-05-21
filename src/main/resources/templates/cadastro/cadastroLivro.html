@@ -1,0 +1,61 @@
+<!DOCTYPE html >
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+ 		xmlns:th="http://www.thymeleaf.org"
+ 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ 		layout:decorator="layoutPadrao" >
+ 		
+	<head>
+		<meta charset="UTF-8">
+		<title>Cadastro Livro</title>
+	</head>
+	
+	<section layout:fragment="conteudo">
+		<h4>Cadastro de Livro</h4>
+		<div class="row" >
+			<div class="col s6">
+				<form action="salvarLivro" method="post" th:object="${livroobj}">
+					
+					<label>ID</label>
+					<input name="id" th:field="*{id}" readonly="readonly">
+					
+					<label>Titulo</label>
+					<input name="titulo" th:field="*{titulo}">
+					
+					<label>ISBN</label>
+					<input name="isbn" th:field="*{isbn}">
+					<br />
+					<label>Descricao</label>
+					<input name="descricao" th:field="*{descricao}">
+					
+					<label>Paginas</label>
+					<input name="paginas" th:field="*{paginas}">
+					<br />
+					<label>Autor</label>
+					<input name="autor" th:field="*{autor}">
+					
+					<label>Editora</label>
+					<input name="editora" th:field="*{editora}">
+					<br />
+					<label>Genero</label>
+					<input name="genero" th:field="*{genero}">
+					
+					<label>Status do livro</label>
+					
+					<select th:field="*{statusLivro}"> 
+						<option th:each="statusLivro: ${todosStatusLivro}" 
+							 	th:text="${statusLivro.descricao}" 
+							  	th:value="${statusLivro}"></option>
+					</select>
+					
+					<br />
+					<button class="btn waves-effect waves-light" type="submit" name="action">Salvar
+					    <i class="material-icons right">send</i>
+					 </button>
+					 <a class="waves-effect waves-light btn" href="/listaLivros">Listar Livros 
+					 	<i class="material-icons right">list</i>
+					 </a>
+				</form>
+			</div> <!-- col s6 -->
+		</div> <!-- row -->
+	</section>
+</html>
