@@ -17,3 +17,5 @@ Utilizando:
 * PostgreSQL
   
 
+### Update
+Foi adicionado um teste unitário e também teste de integração com Selenium para aula de Testes de Software.
